@@ -1,0 +1,17 @@
+# Unity-generated files (the complete Unity project is not stored here)
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.userprefs
+.vs/
+.idea/
+.DS_Store
+Thumbs.db
