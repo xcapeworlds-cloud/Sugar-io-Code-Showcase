@@ -2,9 +2,8 @@
 
 **A Unity gameplay-systems prototype built around a candy-themed tornado arena.** Players and AI-controlled tornadoes collect candy, grow, compete, and interact with destructible scenery.
 
-[Explore the source code](Scripts/) · [Architecture and code review](docs/ARCHITECTURE.md) · [Unity Editor screenshot](Unity_Editor_Proof.png)
+[Explore the source code](Scripts/) · [Architecture and code review](docs/ARCHITECTURE.md)
 
-![Sugar.io prototype in the Unity Editor](Unity_Editor_Proof.png)
 
 ## What this repository demonstrates
 
@@ -43,4 +42,3 @@ The 29 scripts are provided as an organized source snapshot, with targeted showc
 4. [TornadoMatchManager.cs](Scripts/Game/TornadoMatchManager.cs) and [MatchBalance.cs](Scripts/Game/MatchBalance.cs) for orchestration and tuning.
 5. [SugarUI.cs](Scripts/UI/SugarUI.cs) for a focused event-driven UI refactor.
 
-**Screenshot:** The image above is an earlier Unity Editor view of the prototype, not a build verification or performance benchmark.
