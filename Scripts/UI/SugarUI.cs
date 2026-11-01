@@ -29,6 +29,7 @@ public sealed class SugarUI : MonoBehaviour
 
     private void OnEnable()
     {
+        lastDisplayedSugar = int.MinValue;
         nextPlayerSearchTime = 0f;
         FindAndBindPlayer();
         Refresh(player != null ? player.Sugar : 0f);
@@ -43,12 +44,11 @@ public sealed class SugarUI : MonoBehaviour
 
         nextPlayerSearchTime = Time.unscaledTime + PlayerSearchInterval;
 
+        // Re-check the active player even when the old component still exists.
+        // This covers scene transitions that swap player objects without defeating them.
+        FindAndBindPlayer();
         if (player == null || player.IsDefeated)
-        {
-            UnbindPlayer();
-            FindAndBindPlayer();
-            Refresh(player != null ? player.Sugar : 0f);
-        }
+            Refresh(0f);
     }
 
     private void OnDisable()
@@ -95,6 +95,10 @@ public sealed class SugarUI : MonoBehaviour
 
         if (player != null)
             player.SugarChanged += Refresh;
+
+        // A newly selected player may have a different sugar value even if
+        // no SugarChanged event has fired since this HUD was enabled.
+        Refresh(player != null ? player.Sugar : 0f);
     }
 
     private void UnbindPlayer()
